@@ -6,7 +6,8 @@ public class BankAccount {
     private int accountNumber;
     private int balance;
 
-    public BankAccount(){
+    //CONSTRUCTORS a constructor is the part of your program that tells java how you want your objects made
+    public BankAccount(String firstName, String lastName, String dateOfBirth, int accountNumber, int balance){
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -59,9 +60,10 @@ public class BankAccount {
     this.balance += amount;
     }
     public void withdrawal(int amount){
-        this.balance = balance - amount;
+        this.balance -= amount;
     }
-    public void payInterest(int amount){
-        this.balance += (amount + (amount * 0.2));
+    public void payInterest(double percentage){
+        double interestToPay = this.balance * percentage;
+        this.balance += interestToPay;
     }
 }
